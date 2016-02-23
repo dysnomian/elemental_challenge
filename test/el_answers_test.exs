@@ -38,4 +38,11 @@ defmodule ElAnswersTest do
 
     assert ElAnswers.cds_with_hour_plus_running_times(coll) == expected
   end
+
+  test "authors_with_cds/1 returns correctly with mock data" do
+    coll = InputMap.data('test/test_data.json')
+    expected = ["joan"]
+
+    assert ElAnswers.authors_with_cds(coll) == expected
+  end
 end

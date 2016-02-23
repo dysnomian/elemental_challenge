@@ -19,9 +19,12 @@ defmodule ElAnswers do
   end
 
   @doc """
-  Given a collection, lists the authors with both CDs and books (as determined by the :type field).
+  Given a collection, intersect the set of book authors with the set of CD authors.
   """
   def authors_with_cds(collection) do
+    author_set(collection, :book) |>
+    MapSet.intersection(author_set(collection, :cd)) |>
+    MapSet.to_list
   end
 
   @doc """
@@ -34,5 +37,14 @@ defmodule ElAnswers do
   defp cd_length(cd_map) do
     Map.fetch!(cd_map, :tracks) |>
     Enum.reduce(0, &(&1.seconds + &2))
+  end
+
+  @doc """
+  Given a collection and a media type, returns a set of authors listed under that media type.
+  """
+  defp author_set(collection, media_type) do
+    ElCollection.by_type(collection) |>
+    Map.fetch!(media_type) |>
+    Enum.reduce(%MapSet{}, &(MapSet.put(&2, &1.author)))
   end
 end
