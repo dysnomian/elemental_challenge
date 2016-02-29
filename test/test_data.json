@@ -12,12 +12,12 @@
 }, {
 	"price": 15.99,
 	"chapters": [
-		"one",
+		"Journal from 1987",
 		"two",
 		"three"
 	],
 	"year": 1999,
-	"title": "foo",
+	"title": "Journals",
 	"author": "mary",
 	"type": "book"
 }, {
@@ -160,13 +160,13 @@
 	"price": 20.99,
 	"tracks": [{
 		"seconds": 300,
-		"name": "one"
+    "name": "Bokura wa Ima no Naka de (Live 2013)"
 	}, {
 		"seconds": 3330,
 		"name": "two"
 	}],
 	"year": 2000,
-	"title": "baz",
+  "title": "Love Live!",
 	"author": "μ's",
 	"type": "cd"
 }, {
@@ -264,11 +264,11 @@
 		"name": "one"
 	}, {
 		"seconds": 200,
-		"name": "two"
+    "name": "Mascarpone in 2014"
 	}],
 	"year": 2000,
-	"title": "cheese",
-	"author": "nagisa",
+  "title": "Cheeses I Came Back For",
+	"author": "Tomoe Nagisa",
 	"type": "cd"
 }, {
 	"price": 15.99,

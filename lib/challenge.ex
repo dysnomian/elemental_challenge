@@ -1,4 +1,4 @@
-defmodule ElementalChallenge do
+defmodule Challenge do
   def main(args) do
     args |>
     parse_args |>
@@ -6,7 +6,8 @@ defmodule ElementalChallenge do
   end
 
   defp process([]) do
-    IO.puts "No input given."
+    IO.puts "No input given. use the `--input` switch prior to naming " <>
+    "your input file."
   end
 
   defp process(options) do
@@ -29,7 +30,8 @@ defmodule ElementalChallenge do
   defp present(input_map) do
     [MostExpensive.present(input_map),
      LongCds.present(input_map),
-     AuthorsWithCds.present(input_map)] |>
+     AuthorsWithCds.present(input_map),
+     ItemsContainingYears.present(input_map)] |>
     Enum.join |>
     IO.puts
   end

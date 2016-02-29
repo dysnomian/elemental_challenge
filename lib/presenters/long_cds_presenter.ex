@@ -1,9 +1,5 @@
 defmodule LongCdsPresenter do
   def present(results) do
-    convert_results_to_string(results)
-  end
-
-  def convert_results_to_string(results) do
     formatted_results = results |>
     Enum.map(&(album_string(&1))) |>
     TermPresenter.numbered_list

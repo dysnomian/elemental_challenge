@@ -10,11 +10,11 @@ use Mix.Config
 
 # You can configure for your application as:
 #
-#     config :elemental_challenge, key: :value
+#     config :challenge, key: :value
 #
 # And access this configuration in your application as:
 #
-#     Application.get_env(:elemental_challenge, :key)
+#     Application.get_env(:challenge, :key)
 #
 # Or configure a 3rd-party app:
 #

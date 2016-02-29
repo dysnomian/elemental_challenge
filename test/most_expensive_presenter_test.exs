@@ -8,20 +8,11 @@ defmodule MostExpensivePresenterTest do
       {:dvd, [%{director: "amethyst", price: 29.99, title: "foo", type: "dvd"}]},
       {:misc, [%{author: "pearl", price: 29.99, title: "foo", type: "misc"}]}]
 
-    expected = "5 Most Expensive By Category\n\n" <>
-               "Books\n" <>
-               "------\n" <>
-               "  steven, 'Foo': $29.99\n" <>
-               "Cds\n" <>
-               "----\n" <>
-               "  garnet, 'Foo': $29.99\n" <>
-               "Dvds\n" <>
-               "-----\n" <>
-               "  amethyst, 'Foo': $29.99\n" <>
-               "Miscs\n" <>
-               "------\n" <>
-               "  pearl, 'Foo': $29.99"
+    # This mess is an ANSI-escaped string, and has been verified visually.
+    expected = [[[[[[[[[[] | "\e[1m"], "5 Most Expensive By Category"], "\n"], "============================"], "\n\n"] | "\e[0m"],
+              "\e[4mBooks\n\e[0m  1) steven, 'Foo': $29.99\e[0m\n\n\e[4mCds\n\e[0m  1) garnet, 'Foo': $29.99\e[0m\n\n\e[4mDvds\n\e[0m  1) amethyst, 'Foo': $29.99\e[0m\n\n\e[4mMiscs\n\e[0m  1) pearl, 'Foo': $29.99\e[0m"],
+             "\n\n\n\n"] | "\e[0m"]
 
-    assert MostExpensivePresenter.convert_results_to_string(coll) == expected
+    assert MostExpensivePresenter.present(coll) == expected
   end
 end

@@ -1,11 +1,11 @@
-defmodule ElementalChallenge.Mixfile do
+defmodule Challenge.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :elemental_challenge,
+    [app: :challenge,
      version: "0.0.1",
      elixir: "~> 1.2",
-     escript: [main_module: ElementalChallenge],
+     escript: [main_module: Challenge],
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      deps: deps]
