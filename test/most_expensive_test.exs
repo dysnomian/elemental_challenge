@@ -1,7 +1,7 @@
 defmodule MostExpensiveTest do
   use ExUnit.Case, async: true
 
-  test "most_expensive_per_type/1 works with mock data" do
+  test "run/1 works with mock data" do
     coll = InputMap.data
     expected = [book: [%{author: "liss", chapters: ["one", "two", "three"], price: 29.99, title: "foo", type: "book", year: 1999},
         %{author: "anna", chapters: ["one", "two", "three"], price: 25.99, title: "foo", type: "book", year: 1999},
