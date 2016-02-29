@@ -10,10 +10,13 @@ defmodule AuthorsWithCds do
 
   def present(collection) do
     author_list = run(collection) |>
-    Enum.map(&("  " <> &1)) |>
-    Enum.join("\n")
+    TermPresenter.numbered_list
 
-    "Authors who also have CDs\n\n" <> author_list
+    TermPresenter.section(title, author_list)
+  end
+
+  defp title do
+    "Authors who also have CDs"
   end
 
   # Given a collection and a media type, returns a set of authors listed under that media type.

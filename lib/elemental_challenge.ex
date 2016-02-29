@@ -30,7 +30,7 @@ defmodule ElementalChallenge do
     [MostExpensive.present(input_map),
      LongCds.present(input_map),
      AuthorsWithCds.present(input_map)] |>
-    Enum.join("\n\n\n\n") |>
+    Enum.join |>
     IO.puts
   end
 end

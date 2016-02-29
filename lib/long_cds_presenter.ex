@@ -5,21 +5,19 @@ defmodule LongCdsPresenter do
 
   def convert_results_to_string(results) do
     formatted_results = results |>
-    Enum.map(fn(album) ->
-      [album_string(album, "  ")]
-    end) |>
-    Enum.join("\n")
+    Enum.map(&(album_string(&1))) |>
+    TermPresenter.numbered_list
 
-    title <> formatted_results
+    TermPresenter.section(title, formatted_results)
   end
 
   defp title do
-    "CDs with lengths greater than 1 hour\n\n"
+    "CDs with lengths greater than 1 hour"
   end
 
-  defp album_string(album, offset \\ "") do
-      offset <> album.author <> ", '" <> album.title <> "': " <>
-      seconds_to_time(LongCds.cd_length(album))
+  defp album_string(album) do
+    album.author <> ", '" <> album.title <> "': " <>
+    seconds_to_time(LongCds.cd_length(album))
   end
 
   defp seconds_to_time(seconds) do
