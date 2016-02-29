@@ -159,10 +159,10 @@
 }, {
 	"price": 20.99,
 	"tracks": [{
-		"seconds": 180,
+		"seconds": 300,
 		"name": "one"
 	}, {
-		"seconds": 200,
+		"seconds": 3330,
 		"name": "two"
 	}],
 	"year": 2000,
@@ -172,11 +172,8 @@
 }, {
 	"price": 19.99,
 	"tracks": [{
-		"seconds": 180,
+		"seconds": 3601,
 		"name": "one"
-	}, {
-		"seconds": 200,
-		"name": "two"
 	}],
 	"year": 2000,
 	"title": "baz",

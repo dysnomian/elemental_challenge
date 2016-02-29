@@ -1,7 +1,6 @@
 defmodule MostExpensivePresenter do
   def present(results) do
-    convert_results_to_string(results) |>
-    IO.puts
+    convert_results_to_string(results)
   end
 
   def convert_results_to_string(results) do

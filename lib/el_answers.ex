@@ -9,15 +9,6 @@ defmodule ElAnswers do
   end
 
   @doc """
-  Given a collection, lists the items with a type of :cd with a running time over an hour.
-  """
-  def cds_with_hour_plus_running_times(coll) do
-    InputMap.by_type(coll) |>
-    Map.fetch!(:cd) |>
-    Enum.filter(fn (cd) -> cd_length(cd) > 3600 end)
-  end
-
-  @doc """
   Given a collection, intersect the set of book authors with the set of CD authors.
   """
   def authors_with_cds(collection) do
@@ -62,11 +53,6 @@ defmodule ElAnswers do
   # Naive date regex. Assumes that all positive 4 digit numbers are years.
   def string_contains_year?(string) do
     Regex.match?(~r/\b\d{4}\b/, string)
-  end
-
-  defp cd_length(cd_map) do
-    Map.fetch!(cd_map, :tracks) |>
-    Enum.reduce(0, &(&1.seconds + &2))
   end
 
   # Given a collection and a media type, returns a set of authors listed under that media type.

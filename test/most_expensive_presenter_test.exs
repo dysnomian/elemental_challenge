@@ -8,7 +8,7 @@ defmodule MostExpensivePresenterTest do
       {:dvd, [%{director: "amethyst", price: 29.99, title: "foo", type: "dvd"}]},
       {:misc, [%{author: "pearl", price: 29.99, title: "foo", type: "misc"}]}]
 
-    expected = "5 Most Expensive By Category\n" <>
+    expected = "5 Most Expensive By Category\n\n" <>
                "Books\n" <>
                "------\n" <>
                "  steven, 'Foo': $29.99\n" <>
