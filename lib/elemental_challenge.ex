@@ -28,8 +28,9 @@ defmodule ElementalChallenge do
 
   defp present(input_map) do
     [MostExpensive.present(input_map),
-     LongCds.present(input_map)] |>
-    Enum.join("\n\n") |>
+     LongCds.present(input_map),
+     AuthorsWithCds.present(input_map)] |>
+    Enum.join("\n\n\n\n") |>
     IO.puts
   end
 end
